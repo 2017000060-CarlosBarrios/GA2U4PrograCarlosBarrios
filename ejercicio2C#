@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Declaración de variables y matriz de 4 filas por 3 columnas
+        int[,] tabla = new int[4, 3];
+        int num, suma;
+
+        // Recorremos las 4 filas
+        for (int fila = 0; fila < 4; fila++)
+        {
+            suma = 0; // Empezamos la suma en cero para cada fila
+
+            // Recorremos las 3 columnas
+            for (int columna = 0; columna < 3; columna++)
+            {
+                Console.WriteLine("Ingrese un número:");
+                num = Convert.ToInt32(Console.ReadLine());
+
+                // Guardamos el número en la matriz
+                tabla[fila, columna] = num;
+
+                // Le vamos sumando los números de la fila
+                suma += num;
+            }
+
+            // Mostramos cuánto sumó toda la fila (fila + 1 para mostrar de la 1 a la 4)
+            Console.WriteLine($"La suma de la fila {fila + 1} es: {suma}");
+        }
+    }
+}
