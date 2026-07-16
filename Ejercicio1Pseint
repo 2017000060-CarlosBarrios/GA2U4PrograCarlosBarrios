@@ -1,0 +1,23 @@
+Algoritmo Lecc17
+	definir numeroF, numeroC como entero
+	//Creamos la matriz de 4 filas por 4 columnas
+	definir matrizI Como Entero
+	Dimensionar matrizI[4,4]
+	Para numeroF <- 1 Hasta 4 Hacer
+		Para numeroC <- 1 Hasta 4 Hacer
+			Si numeroF <- numeroC Entonces
+				matrizI[numeroF,numeroC]<-1
+			SiNo
+				matrizI[numeroF,numeroC]<-0
+			Fin Si
+		Fin Para
+	Fin Para
+	
+	Escribir "Matriz identidad"
+	Para numeroF<-1 Hasta 4 Hacer
+		Para numeroC<-1 Hasta 4 Hacer
+			escribir sin saltar matrizI[numeroF,numeroC]," "
+		Fin Para
+		escribir " "
+	Fin Para
+FinAlgoritmo
