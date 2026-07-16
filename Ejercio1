@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Creamos una matriz de 4x4 (en C# se definen como [,] y son base 0)
+        int[,] matrizColumnas = new int[4, 4];
+
+        // Recorremos cada fila (0 a 3)
+        for (int numeroFila = 0; numeroFila < 4; numeroFila++)
+        {
+            // Recorremos cada columna (0 a 3)
+            for (int numeroColumna = 0; numeroColumna < 4; numeroColumna++)
+            {
+                // Guardamos el número de la columna (sumamos 1 para mantener el patrón 1, 2, 3, 4)
+                matrizColumnas[numeroFila, numeroColumna] = numeroColumna + 1;
+            }
+        }
+
+        // Mostramos la matriz ya llena
+        Console.WriteLine("Matriz de Columnas");
+        for (int numeroFila = 0; numeroFila < 4; numeroFila++)
+        {
+            for (int numeroColumna = 0; numeroColumna < 4; numeroColumna++)
+            {
+                Console.Write(matrizColumnas[numeroFila, numeroColumna] + " ");
+            }
+            Console.WriteLine(); // Salto de línea al terminar la fila
+        }
+    }
+}
