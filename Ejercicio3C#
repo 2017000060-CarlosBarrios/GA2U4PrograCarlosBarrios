@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] tabla = new int[4, 4];
+
+        // Primero llenamos la matriz
+        for (int fila = 0; fila < 4; fila++)
+        {
+            for (int columna = 0; columna < 4; columna++)
+            {
+                Console.WriteLine("Ingrese un número:");
+                tabla[fila, columna] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        // Tomamos el primer dato como referencia
+        int mayorr = tabla[0, 0];
+        int x = 1;  // Para guardar la fila de forma visual (base 1)
+        int yy = 1; // Para guardar la columna de forma visual (base 1)
+
+        // Buscamos si existe algún número más grande
+        for (int fila = 0; fila < 4; fila++)
+        {
+            for (int columna = 0; columna < 4; columna++)
+            {
+                if (tabla[fila, columna] > mayorr)
+                {
+                    // Encontramos uno más grande, lo guardamos
+                    mayorr = tabla[fila, columna];
+                    
+                    // Guardamos la posición sumando 1 para que coincida con el formato de PSeInt
+                    x = fila + 1;
+                    yy = columna + 1;
+                }
+            }
+        }
+
+        // Mostramos el resultado final
+        Console.WriteLine($"El número mayor es: {mayorr}");
+        Console.WriteLine($"Está en la fila {x}");
+        Console.WriteLine($"Y en la columna {yy}");
+    }
+}
